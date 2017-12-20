@@ -1,2 +1,8 @@
 # TvHorizontalFlowLayout
-# TvHorizontalFlowLayout
+在Tv中，launcher基本是一页页的pageUI组成的(有横向和竖向两种滚动方式)。
+1、每个page页的布局是不规则的且都不一样，导致无法复用。
+2、有线上更新布局的需求或下拉加载(通过接口拿到图片，并且图片的大小可能会变动)
+导致page的布局不能在xml中写死，但是通过代码一个个addView又很麻烦。
+为此，我着手做了这个东东。
+
+
