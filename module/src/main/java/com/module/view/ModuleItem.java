@@ -45,7 +45,7 @@ public abstract class ModuleItem {
         this.mContext = context;
     }
 
-    abstract void createItemView(Context context);
+    public abstract void createItemView(Context context);
 
     protected int getTopMargin() {
         return topMargin;
