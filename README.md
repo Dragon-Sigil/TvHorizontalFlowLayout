@@ -7,7 +7,7 @@
 
 ![首页排版并不固定，尤其后期更新，所以不能写死](https://github.com/Dragon-Sigil/TvHorizontalFlowLayout/blob/master/img-folder/home.png)
 
-首先，确定你是什么Item，不同的item除了公共的参数(如：长宽，位置信息)可能有各自的特性，比如：Image需要加载url，video需要播放url，这个里面分别自定义了Video的Item和图片的Item
+1、首先，确定你是什么Item，不同的item除了公共的参数(如：长宽，位置信息)可能有各自的特性，比如：Image需要加载url，video需要播放url，这个里面分别自定义了Video的Item和图片的Item
 
 ```
 通过builder模式构建。参数分别是名称、viewId、左边item的Id、上面item的Id、边距。(边距上下左右都有，看需求往里设置，这也是为什么用builder模式的原因)
@@ -15,7 +15,7 @@
 new ModuleItemVideo.Builder(mContext).setName("第一个").itemId(1).leftItemId(0).topItemId(0).leftMargin(30).build()
 ```
 
-然后，创建ModuleUI，设置item点击事件。
+2、然后，创建ModuleUI，设置item点击事件。
 
 ```
 List<ModuleItem> itemList = new ArrayList<>();
@@ -36,11 +36,11 @@ moduleUI.setOnItemClickListener(new View.OnClickListener() {
 });
 ```
 
-最后，把ModuleView添加在ViewPager或需要的父控件即可
+3、最后，把ModuleView添加在ViewPager或需要的父控件即可
 
 ```
 RelativeLayout theLatest = findViewById(R.id.relative_layout);
 theLatest.addView(moduleUI.createUI(itemList));
 ```
 
-这样就可以在代码中动态构建你的launcher页面。页面结构数据可以以头端下发的方式来更新，包括点击后的参数。
+总结：这样就可以在代码中动态构建你的launcher页面。页面结构数据可以以头端下发的方式来更新，包括点击后的参数。
